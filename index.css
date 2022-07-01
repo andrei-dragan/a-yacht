@@ -1,0 +1,2794 @@
+@import url('https://fonts.googleapis.com/css?family=Average+Sans|Fjalla+One&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Average Sans', sans-serif;
+    text-rendering: optimizelegibility;
+}
+
+html {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 2560px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 12px 0 15px -4px #df3f5f, -12px 0 8px -4px #df3f5f;
+}
+
+main {
+    position: relative;
+}
+
+/* The Loader */ 
+#loader {
+    position: fixed;
+    z-index: 15;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #298c81;
+
+    opacity: 1;
+    transition: .5s all;
+}
+
+#loader .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+}
+
+#loader #loader1 {
+    background-color: #df3f5f;
+    animation: loader1 2.5s linear infinite;
+}
+@keyframes loader1 {
+    0% {transform: translate(0,0);}
+    17% {transform: translate(8px, -8px);}
+    34% {transform: translate(+8px, +8px);}
+    50% {transform: translate(-8px, +8px);}
+    67% {transform: translate(-8px, -8px);}
+    100% {transform: translate(0,0);}
+}
+
+#loader #loader2 {
+    background-color: #D1EFB5;
+    animation: loader2 2.5s linear infinite;
+}
+@keyframes loader2 {
+    0% {transform: translate(0,0);}
+    17% {transform: translate(+8px, +8px);}
+    34% {transform: translate(-8px, +8px);}
+    50% {transform: translate(-8px, -8px);}
+    67% {transform: translate(+8px, -8px);}
+    100% {transform: translate(0,0);}
+}
+
+#loader #loader3 {
+    background-color: #AFC1D6;
+    animation: loader3 2.5s linear infinite;
+}
+@keyframes loader3 {
+    0% {transform: translate(0,0);}
+    17% {transform: translate(-8px, +8px);}
+    34% {transform: translate(-8px, -8px);}
+    50% {transform: translate(+8px, -8px);}
+    67% {transform: translate(+8px, +8px);}
+    100% {transform: translate(0,0);}
+}
+
+#loader #loader4 {
+    background-color: #E9FF70;
+    animation: loader4 2.5s linear infinite;
+    transform-origin: center center;
+}
+@keyframes loader4 {
+    0% {transform: translate(0,0);}
+    17% {transform: translate(-8px, -8px);}
+    34% {transform: translate(+8px, -8px);}
+    50% {transform: translate(+8px, +8px);}
+    67% {transform: translate(-8px, +8px);}
+    100% {transform: translate(0,0);}
+}
+
+
+/* The landing page */
+#landing_page {
+    height: 100vh;
+    min-height: 800px;
+    width: 100%;
+    position: relative;
+}
+
+#landing_page .landing_image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-origin: right left;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+    transition: 1.5s all;   
+}
+#landing_page .landing_image:before { /* For IE */
+    position: absolute; 
+    z-index: 1;
+    display: block; 
+    content: "";
+    top: 0; right: 0; bottom: 0; left: 0;  
+    background: hsla(0,0%,0%,0.5);         
+}
+
+#landing_image1 {
+    background: url("images/landing_img1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,0.5);
+}
+
+#landing_image2 {
+    background: url("images/landing_img2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#landing_image3 {
+    background: url("images/landing_img3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#landing_page #text_box {
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    transform: translateY(-50%); 
+    width: 40%;
+    text-align: left;  
+}
+
+#landing_page #text_box h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-style: italic;
+    color: #ffffff;
+
+    display: table;
+    text-align: left;
+}
+
+#landing_page #text_box #underline {
+    position: relative;
+    z-index: -1;
+    margin: auto;
+    transform: translateY(-25px);
+    height: 15px;
+    width: 100%;
+    background-color: #df3f5f;
+}
+
+#landing_page #text_box h2 {
+    position: relative;
+    padding: .9rem 0rem;
+    text-align: left;
+    z-index: 1;
+
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+#landing_page #text_box #explore_more_btn {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 1rem;
+
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    width: 175px;
+    border-radius: 3px;
+    transition: linear .25s all;
+}
+
+#landing_page #text_box #explore_more_btn a {
+    padding: .7rem 0rem .7rem .5rem;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Average Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 1.1rem;
+}
+
+#landing_page #text_box #explore_more_btn #inside_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto 1rem;
+}
+
+#landing_page #text_box #explore_more_btn #inside_btn #line1 {
+    height: 14px;
+    width: 4px;
+    transform: rotate(-45deg) translateY(+4.5px);
+    background-color: #ffffff;
+}
+
+#landing_page #text_box #explore_more_btn #inside_btn #line2 {
+    height: 14px;
+    width: 4px;
+    transform: rotate(45deg) translateY(-4.5px);
+    background-color: #ffffff;
+}
+
+#landing_page #text_box #explore_more_btn:hover {
+    cursor: pointer;
+    background-color: #df3f5f;
+}
+
+#landing_page #random_text {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-align: center;
+
+    position: absolute;
+    z-index: 1;
+    right: calc(2.5rem + 51px);
+    top: 50%;
+    width: 220px;
+    height: 55px;
+
+    padding: 1rem;
+    border: 2px solid #ffffff;
+
+    transform-origin: bottom right;
+    transform: translateY(+50%) rotate(+90deg);
+}
+
+#landing_page #random_text .random_text_inside {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-align: center;
+    color: #ffffff;
+
+    transition: 1s all;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#landing_page #random_text #random_text_inside1 {opacity: 1;}
+#landing_page #random_text #random_text_inside2, #random_text_inside3 {opacity: 0;}
+
+#landing_page #random_text span {
+    position: absolute;
+    letter-spacing: 0;
+}
+
+#landing_page #random_text #sp1 {
+    bottom: 0px;
+    right: 7px;
+    transform: rotate(30deg);
+    text-shadow: 2px 2px #000000;
+}
+
+#landing_page #random_text #sp2 {
+    top: 0px;
+    left: 3px;
+    transform: rotate(45deg);
+    text-shadow: 12px 12px #000000;
+}
+
+#landing_page #random_text #sp3 {
+    top: -5px;
+    right: 3px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px #000000;
+}
+
+#landing_page #random_text_background {
+    position: absolute;
+    z-index: 1;
+    right: calc(2.5rem + 57px);
+    top: calc(50% + 4px);
+    width: 220px;
+    height: 55px;
+
+    background-color: #df3f5f;
+    opacity: 0.9;
+
+    transform: translateY(+50%) rotate(+90deg);
+    transform-origin: right bottom;
+}
+
+#landing_page #random_text_background_l1 {
+    position: absolute;
+    right: calc(2.5rem + 24px);
+    top: calc(2rem + 70px);
+
+    background-color: #fff;
+    width: 2px;
+    height: calc(50% - 2rem - 220px);
+}
+
+#landing_page #random_text_background_l2 {
+    position: absolute;
+    right: calc(2.5rem + 24px);
+    top: calc(50% + 110px);
+
+    background-color: #fff;
+    width: 2px;
+    height: calc(50% - 130px);
+}
+
+#landing_page #social_media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 4rem;
+    bottom: 2rem;
+}
+
+#landing_page #social_media img {
+    width: 30px;
+    margin-right: 1.25rem;
+    opacity: 0.7;
+}
+
+#landing_page #social_media img:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#landing_page #social_media #line_social_media {
+    position: absolute;
+    bottom: calc(50% - 2.5px);
+    right: -40px;
+
+    width: 50px;
+    height: 5px;
+    background-color: #df3f5f;
+}
+
+#landing_page #social_media #text_social_media {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translate(+100%, -50%);
+
+    font-family: 'Fjalla One', sans-serif;
+    font-size: .8rem;
+    opacity: 1;
+    color: #ffffff;
+    letter-spacing: 5px;
+    font-style: italic;
+    width: 140px;
+}
+
+#landing_page #landing_counter {
+    position: absolute;
+    top: 50%;
+    left: calc(14rem + 40%);
+
+    transform: translateY(-50%);
+}
+
+#landing_page #landing_counter h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 18rem;
+    opacity: 0.3;
+    color: #ffffff;
+    letter-spacing: 10px;
+
+    margin: 0;
+    transition: .5s all;
+}
+
+#landing_page #landing_counter #square1 {
+    width: 50px;
+    height: 50px;
+    border-left: 7px solid #df3f5f;
+    opacity: 1;
+
+    position: absolute;
+    bottom: 110px;
+    left: -5px;
+
+    transition: 1s all linear; 
+}
+
+#landing_page #landing_counter #square2 {
+    width: 40px;
+    height: 40px;
+    border-left: 7px solid #ffffff;
+    border-bottom: 7px solid #ffffff;
+    border-radius: 0 0 0 50%;
+    opacity: 0.4;
+
+    position: absolute;
+    bottom: 45px;
+    left: -5px;
+
+    transition: .5s all;
+}
+
+#landing_page #landing_counter #square3 {
+    width: 50px;
+    height: 50px;
+    border-bottom: 7px solid #ffffff;
+    opacity: 0.4;
+
+    position: absolute;
+    bottom: 45px;
+    left: 55px;
+
+    transition: .5s all;
+}
+
+@media (max-width: 1300px) {
+    #landing_page #landing_counter {display: none;}
+    #landing_page #text_box {width: calc(100% - 130px - 2.5rem);}
+}
+
+@media (max-width: 900px) {
+    #landing_page #text_box h1 {font-size: 3.7rem;}
+}
+
+@media (max-width: 690px) {
+    #landing_page #random_text, #random_text_background, #random_text_background_l1, #random_text_background_l2 {display: none;}
+
+    #landing_page #text_box {
+        box-sizing: border-box;
+        width: 100%;
+        left: 0;
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+
+    #landing_page #text_box h1 {
+        margin: 0; 
+        width: 100%; 
+        text-align: center;
+    }
+    #landing_page #text_box h1 #underline {width: 100%;}
+    
+    #landing_page #text_box h2 {
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    #landing_page #text_box #explore_more_btn {margin: 2rem auto 0 auto;}
+    
+    #landing_page #social_media {
+        left: calc(50%);
+        transform: translateX(-165px);
+        margin: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    #landing_page #text_box h2 {font-size: 1.3rem;}
+}
+/* ---------------------------------------------------------------- */
+
+
+/* The Landing Navbar */
+#navbar_large {
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    z-index: 2;
+
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    
+    padding-top: 2rem;
+    width: 100%;
+    height: auto;
+}
+
+#navbar_large #image_logo {
+    display: flex;
+    margin: auto 0;
+    margin-left: 4rem;
+}
+
+#navbar_large #image_logo #navbar_image {
+    position: relative;
+    height: 50px;
+}
+
+#navbar_large #image_logo h1 {
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 2.9rem;
+    letter-spacing: 7px;
+    font-weight: bold;
+    margin: auto 0;
+    margin-bottom: 0;
+}
+
+#navbar_large #links {
+    margin: auto;
+    margin-right: 3.5rem;
+}
+
+#navbar_large #links a {
+    font-family: 'Average Sans', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: auto 0;
+    margin-left: 5rem;
+
+    position: relative;
+}
+
+#navbar_large #links a::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+
+    width: 0%;
+    height: 4px;
+    background-color: #df3f5f;
+    transition: .4s all;
+}
+
+#navbar_large #links #no_hover::before {display: none;}
+#navbar_large #links a:hover::before {width: 80%;}
+#navbar_large #links #no_hover:hover img {transform: rotate(360deg);}
+
+#navbar_large #links a img {
+    height: 23px;
+    transform: translateY(+5px);
+    transition: .4s all;
+}
+
+#navbar_large #open_nav_btn {
+    display: none;
+    flex-direction: column;
+
+    margin: auto;
+    margin-right: 3rem;
+}
+
+#navbar_large #open_nav_btn #open_nav_line1 {
+    height: 3px;
+    width: 20px;
+    background-color: #ffffff;
+}
+
+#navbar_large #open_nav_btn #open_nav_line2 {
+    height: 3px;
+    width: 30px;
+    background-color: #ffffff;
+    margin: 5px 0;
+}
+
+#navbar_large #open_nav_btn {cursor: pointer;}
+
+#navbar_large #open_nav_btn:hover #open_nav_line1 {
+    animation: navbar_animation ease-out .4s;
+}
+@keyframes navbar_animation {
+    0% {width: 20px;}
+    50% {width: 30px;}
+    100% {width: 20px;}
+}
+
+@media (max-width: 1250px) {
+    #navbar_large #links {display: none;}
+    #navbar_large #open_nav_btn {display: flex;}
+}
+
+@media (max-width: 800px) {
+    #navbar_large #image_logo {margin-left: 3rem;}
+}
+
+@media (max-width: 500px) {
+    #navbar_large #image_logo h1 {display: none;}
+    #navbar_large #image_logo #navbar_image {height: 60px;}
+}
+/* ---------------------------------------------------------------- */
+
+
+/* The Scroll Navbar */
+#navbar_scroll {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    z-index: 4;
+
+    position: fixed;
+    top: -100px;
+    right: 0rem;
+
+    width: 100%;
+    height: 80px;
+
+    background-color: #df3f5f;
+    transition: .5s all ease;
+}
+
+#navbar_scroll #image_logo {
+    display: flex;
+    margin: auto 0;
+    background-color: #df3f5f;
+
+    height: 95px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+#navbar_scroll #image_logo #navbar_image {
+    position: relative;
+    height: 50px;
+    margin: auto;
+}
+
+#navbar_scroll #links {margin: auto 0;}
+
+#navbar_scroll #links a {
+    font-family: 'Average Sans', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: auto 2.5rem;
+
+    position: relative;
+    transition: .4s all;
+}
+
+#navbar_scroll #links a::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 4px;
+    background-color: #ffffff;
+    transition: .4s all;
+}
+
+#navbar_scroll #links #no_hover::before {display: none;}
+#navbar_scroll #links a:hover::before {width: 80%;}
+#navbar_scroll #links a:hover {background-color: #df3f5f;}
+#navbar_scroll #links #no_hover:hover img {transform: rotate(360deg);}
+
+#navbar_scroll #links a img {
+    height: 20px;
+    transform: translateY(+5px);
+    transition: .4s all;
+}
+/* ---------------------------------------------------------------- */
+
+
+/* The Go_Up button */
+#go_up {
+    position: fixed;
+    z-index: 5;
+    bottom: 2rem;
+    right: 2rem;
+
+    border-radius: 10px;  
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.3), 0 15px 30px 0 rgba(0, 0, 0, 0.39);
+    
+    animation: appear_go_up_btn .5s ease-in-out;
+    overflow: hidden;
+}
+@keyframes appear_go_up_btn {
+    0% {
+        transform: rotate(90deg) translateY(-4rem);
+    }
+    50% {
+        transform: rotate(90deg) translateY(0rem);
+    }
+    100% {
+        transform:  rotate(0deg) translateY(0);
+    }
+}
+
+#go_up a {
+    padding: .5rem .75rem;
+    background-color: #206E64;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    font-family: 'Fjalla One', sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#go_up a img {
+    width: 20px;
+    margin: auto;
+    margin-bottom: .25rem;
+}
+/* ---------------------------------------------------------------- */
+
+
+/* The Responsive Navbar */
+#navbar_responsive {
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100vh;
+
+    background-color: #298c81;
+    overflow: hidden;
+
+    animation: navbar_appear linear .5s;
+    transition: .5s all;
+}
+
+#navbar_responsive #links {
+    margin: auto;
+
+    display: table;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#navbar_responsive #links a {
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 1.8rem;
+    letter-spacing: 7px;
+
+    text-align: left;
+    width: 250px;
+    margin: 2.5rem 0; 
+    position: relative;
+    display: table;
+}
+
+#navbar_responsive #links a::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 0%;
+    height: 4px;
+    background-color: #df3f5f;
+    opacity: .7;
+    transition: .4s all;
+}
+
+#navbar_responsive #links a:hover {cursor: pointer;}
+#navbar_responsive #links a:hover::before {
+    width: 80%;
+    opacity: .7;
+}
+
+#navbar_responsive #logo_behind {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 3rem;
+    transform: translate(+50%, -25%);
+    height: inherit;
+}
+
+#navbar_responsive #logo_behind img {
+    position: relative;
+    z-index: 5;
+    height: calc(150% + 2rem);
+    opacity: .7;
+}
+
+#navbar_responsive #social_media_navbar {
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#navbar_responsive #social_media_navbar img {
+    width: 35px;
+    margin: 1rem 0;
+    border-radius: 50%;
+    transition: .4s all;
+}
+
+#navbar_responsive #social_media_navbar img:hover {
+    cursor: pointer;
+    background-color: #206E64;
+}
+
+#navbar_responsive #social_media_navbar #navbar_line {
+    width: 3px;
+    height: 50%;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+#navbar_responsive #close_navbar {
+    position: absolute;
+    z-index: 6;
+    top: -2px;
+    right: 3rem;
+    transform: translateX(+50%);
+
+    border: 2px solid #fff;
+    box-shadow: -2px 2px #df3f5f;
+    padding: 1rem 2rem;
+}
+
+#navbar_responsive #close_navbar img {width: 35px; transition: .5s all;}
+#navbar_responsive #close_navbar img:hover {cursor: pointer; transform: rotate(90deg);}
+
+@media (max-width: 500px) {
+   #navbar_responsive #social_media_navbar {display: none;} 
+   #navbar_responsive #links {left: 2rem; transform: translate(0, -50%);}
+}
+
+@media (max-height: 500px) {
+    #navbar_responsive #links a {font-size: 1.4rem;}
+}
+/* ---------------------------------------------------------------- */
+
+
+/* About Us */
+#about_us {
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    padding: 10rem;
+}
+
+#about_us #image_about_us {
+    position: relative;
+    width: 40%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#about_us #image_about_us #text_overlay img {
+    height: 250px;
+    position: relative;
+    z-index: 2;
+}
+
+#about_us #image_about_us #text_overlay h1 {
+    position: relative;
+    z-index: 2;
+    
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-align: center;
+    color: #df3f5f;
+
+    margin-top: 50px;
+}
+
+#about_us #image_about_us #image_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 600px;
+
+    width: 100%;
+    height: 100%;
+    background: url('images/about_us.jpg');
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+#about_us #image_about_us #image_overlay:before { /* For IE */
+    position: absolute; 
+    z-index: 1;
+    display: block; 
+    content: "";
+    top: 0; right: 0; bottom: 0; left: 0;  
+    background: hsla(0,0%,0%,0.3);         
+}
+
+#about_us #text_about_us {
+    width: 60%;
+    text-align: left;
+    padding: 0 2rem;
+}
+
+#about_us #text_about_us #header_about_us {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    color: #df3f5f;
+}
+
+#about_us #text_about_us #header_about_us span {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+#about_us #text_about_us #content_about_us {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+} 
+
+#about_us #text_about_us #line_between {
+    height: 8px;
+    width: 250px;
+    background-color: #df3f5f;
+
+    margin: 1.5rem 0;
+    background: linear-gradient(to left, #df3f5f, #000000);
+}
+
+#about_us #y_letter {
+    position: absolute;
+    z-index: -1;
+    height: auto;
+    width: auto;
+    top: -150px;
+    bottom: 0px;
+    left: -173px;
+
+    opacity: 0.4;
+}
+
+#about_us #y_letter img {
+    height: 100%;
+    width: auto;
+}
+
+@media (max-width: 1350px) {
+    #about_us {
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 2rem;
+        height: auto;
+    }
+
+    #about_us #image_about_us {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    #about_us #image_about_us #text_overlay img {height: 175px;}
+
+    #about_us #image_about_us #text_overlay h1 {font-size: 2.4rem;}
+
+    #about_us #text_about_us {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        padding: 0;
+    }
+
+    #about_us #text_about_us #header_about_us {display: none;}
+    #about_us #text_about_us #content_about_us {font-size: 1.2rem;}
+    #about_us #text_about_us #line_between {width: 100%;}
+
+    #about_us #y_letter {
+        position: absolute;
+        top: -150px;
+        bottom: 0px;
+        left: 0px;
+        transform: translateX(-50%);
+        opacity: 0.4;
+    }
+}
+/* ---------------------------------------------------------------- */
+
+
+/* The Shop */
+#shop {
+    position: relative;
+    width: 100%;
+}
+
+#shop #dividing_line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #df3f5f 0%, #df3f5f 50%, #ffffff 70%, #ffffff 100%);
+    opacity: 0.4;
+}
+
+#shop #main_specs_left_line {
+    position: absolute;
+    top: 5px;
+    left: 2rem;
+    
+    width: 3px;
+    height: 50%;
+    background: linear-gradient(to bottom, #df3f5f, transparent);
+
+    opacity: 0.4;
+}
+
+#shop #discover_more {
+    position: absolute;
+    top: 50px;
+    right: 3.5rem;
+
+    transform-origin: bottom right;
+    transform: rotate(-270deg);
+}
+
+#shop #discover_more h1 {
+    color: #df3f5f;
+    font-family: 'Average Sans', sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#shop #discover_more #long_line {
+    position: absolute;
+    right: -60px;
+    top: 14.0px;
+
+    width: 50px;
+    height: 3px;
+    background-color: #df3f5f;
+}
+
+#shop #discover_more #arrow_line1 {
+    position: absolute;
+    right: -60px;
+    top: 14.0px;
+
+    width: 15px;
+    height: 3px;
+    background-color: #df3f5f;
+    transform-origin: right bottom;
+    transform: rotate(-30deg);
+}
+
+#shop #discover_more #arrow_line2 {
+    position: absolute;
+    right: -60px;
+    top: 14.0px;
+
+    width: 15px;
+    height: 3px;
+    background-color: #df3f5f;
+    transform-origin: right bottom;
+    transform: rotate(+30deg);
+}
+
+#shop #images_shop {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 1200px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#shop #images_shop img {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+    transition: 1s all;
+    animation-name: image_shop_appear;
+    animation-duration: 1s;
+}
+@keyframes image_shop_appear {
+    from {opacity: .6;}
+    to {opacity: 1;}
+}
+
+#shop #images_shop #more_specs_btn {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+
+    padding: .5rem;
+    width: 150px;
+    text-align: center;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+
+    transition: .7s all;
+}
+
+#shop #images_shop #more_specs_btn h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+#shop #images_shop:hover img:hover {cursor: pointer;} 
+#shop #images_shop:hover #over_image_background {height: auto;}
+
+#shop #images_shop:hover #more_specs_btn {opacity: 1; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+#shop #images_shop #more_specs_btn:hover {
+   border-radius: 13px;
+   cursor: pointer;
+}
+#shop #images_shop #shop_img2,#shop_img3,#shop_img4 {display: none;}
+#shop #images_shop #over_image_background {height: 0;}
+
+#shop #main_specs {
+    position: absolute;
+    top: 2rem;
+    left: 6rem; 
+
+    width: calc(100% - 400px);
+    max-width: 800px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    
+    padding: 2rem 0;
+    border-bottom: 3px #000000 solid;
+    border-right: 3px #000000 solid;
+}
+
+#shop #main_specs #main_specs_decoration_text {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translate(+100%, -50%);
+
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 8px;
+
+    width: 200px;
+    opacity: .7;
+    color: #df3f5f;
+}
+
+#shop #main_specs .spec {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    width: 33.3%;
+    margin: 0 2rem;
+
+    transition: .7s all;
+    animation-name: appear_spec;
+    animation-duration: .7s;
+}
+@keyframes appear_spec {
+    from {transform: translateY(-30px); }
+    to {transform: translateY(0px);}
+}
+
+#shop #main_specs .spec #divide_spec_line {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    width: 2px;
+    height: 40px;
+    background-color: #df3f5f;
+}
+
+#shop #main_specs .spec h2 {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    opacity: 1;
+    color: #df3f5f;
+    margin-bottom: .2rem;
+}
+
+#shop #main_specs .spec h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    opacity: .85;
+}
+
+#shop #main_specs .spec h1 #spec1_span, #spec2_span, #spec3_span {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: bold;
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+    margin-right: .5rem;
+}
+
+#shop #main_specs .spec h1 #spec4_span {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    opacity: .85;
+}
+
+#shop #main_specs #responsive_main_specs_img {
+    position: absolute;
+    top: 0;
+    left: -75px;
+    display: flex;
+    flex-direction: column;
+    
+    height: 100%;
+    width: 75px;
+    display: none;
+}
+
+#shop #main_specs #responsive_main_specs_img .responsive_main_specs_img_container {
+    width: 100%;
+    height: 33.3%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+    border-bottom: 2px solid #df3f5f;
+    border-right: 2px solid #df3f5f;
+
+    opacity: .4;
+    transition: .2s all;
+}
+
+#shop #main_specs #responsive_main_specs_img .responsive_main_specs_img_container:hover {
+    cursor: pointer;
+    border-right: 10px solid #df3f5f;
+}
+
+#shop #main_specs #responsive_main_specs_img img {
+    height: 30px;
+    width: auto;
+}
+#shop #main_specs #responsive_main_specs_img #responsive_main_specs_img_container1 {opacity: 1;}
+
+#shop #main_specs #responsive_main_specs_square {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    border-bottom: 3px solid #000000;
+    border-right: 3px solid #000000;
+    display: none;
+}
+
+#shop #under_image_title {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+
+    width: auto;
+    height: auto;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+#shop #under_image_title h1 {
+    font-family: 'Fjalla One', sans-serif;
+    color: #000000;
+    opacity: 0.1;
+    letter-spacing: 0px;
+    transform: rotate(-3deg);
+}
+
+#shop #under_image_title_background {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+#shop #shop_bottom_text {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+
+    display: inline-block;
+}
+
+#shop #shop_bottom_text #yacht_name { 
+    display: block; 
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 312px;
+}
+
+#shop #shop_bottom_text #yacht_name h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 4.5rem;
+    color: #000000;
+}
+
+#shop #shop_bottom_text #yacht_name h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+#shop #shop_bottom_text #yacht_name #color_under_yacht_name {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: -1rem;
+    transform: translateY(-50%);
+
+    height: calc(100% + 2rem);
+    width: calc(1rem + 40%);
+    background-color: #df3f5f;
+}
+
+#shop #shop_bottom_text .shop_bottom_text_line {
+    height: 2px;
+    background-color: #df3f5f;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#shop #shop_bottom_text #next_product {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 160px;
+    margin: auto;
+    margin-right: 0;
+    padding: .5rem 1rem;
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: #df3f5f;
+    transition: .4s all;
+}
+
+#shop #shop_bottom_text #next_product h1 {
+    font-family: 'Average Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #000000;
+    font-weight: bold;
+
+    margin: auto 0;
+    transform: translateY(-2px);
+    margin-left: 1rem;
+}
+
+#shop #shop_bottom_text #next_product img {
+    margin: auto 0;
+    height: 15px;
+    border-radius: 25px;
+    transition: .4s all;
+}
+
+#shop #shop_bottom_text #next_product:hover {cursor: pointer;}
+#shop #shop_bottom_text #next_product:hover img {transform: translateX(+5px);}
+
+#shop #shop_bottom_text #curved_square {
+    position: absolute;
+    left: 0;
+    bottom: calc(50% - 1px);
+
+    width: 100px;
+    height: 100px;
+    border-left: 2px solid #df3f5f;
+    border-bottom: 2px solid #df3f5f;
+    border-bottom-left-radius: 50%;
+}
+
+#shop #shop_bottom_text #curved_suqare_line_up {
+    position: absolute;
+    z-index: -1;
+    left: 0;    
+    bottom: calc(2rem + 100px);
+
+    width: 2px;
+    height: 400px;
+    background: linear-gradient(to top, #df3f5f 0%, transparent);
+}
+
+#shop #shop_bottom_text .responsive_shop_bottom_text_line {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 2px;
+    background-color: #df3f5f;
+    display: none;
+}
+
+@media (max-width: 1300px) {
+
+    #shop #main_specs {
+        left: 3rem;
+        width: calc(100% - 6rem);
+    }
+
+    #shop #main_specs #main_specs_decoration_text {display: none;}
+}
+
+@media (max-width: 1000px) {
+    #shop #discover_more {right: 1.6rem;}
+    #shop #main_specs {
+        left: calc(.5rem + 77px);
+        top: 5px;
+        height: 170px;
+        width: calc(100% - 116px);
+        max-width: 250px;
+        border: none;
+    }
+
+    #shop #main_specs .spec {
+        width: 100%;
+        text-align: center;
+    }
+
+    #shop #main_specs #divide_spec_line {display: none;}
+    #shop #main_specs #spec3 {display: none;}
+    #shop #main_specs #spec2 {display: none;}
+
+    #shop #shop_bottom_text #curved_square {
+        width: 30px;
+        height: 80px;
+        left: -2rem;
+        border-bottom-left-radius: 5px;
+    }
+    #shop #shop_bottom_text #yacht_name {
+        margin: auto;
+        margin-left: 0rem;
+    }
+
+    #shop #shop_bottom_text {left: 2.5rem;}
+    #shop #shop_bottom_text #yacht_name {width: 250px;}
+    #shop #shop_bottom_text #yacht_name h1 {font-size: 3.5rem;}
+    #shop #shop_bottom_text #yacht_name h2 {font-size: 1.5rem;}
+    #shop #shop_bottom_text #curved_suqare_line_up {left: -2rem;}
+    #shop #shop_bottom_text .shop_bottom_text_line {display: none;}
+
+    #shop #main_specs_left_line {left: .5rem;}
+
+    #shop #main_specs #responsive_main_specs_img {display: flex;}
+    #shop #main_specs #responsive_main_specs_square {display: block;}
+    #shop #shop_bottom_text .responsive_shop_bottom_text_line {display: block;}
+}
+
+@media (max-width: 600px) {
+    #shop #images_shop img {top: calc(50% + 2rem);}
+    #shop #images_shop #more_specs_btn {top: calc(50% + 2rem);}
+    #shop #images_shop:hover #more_specs_btn {top: calc(50% + 2rem);}
+    #shop #under_image_title {top: calc(50% + 2rem);}
+    #shop #shop_bottom_text #yacht_name {width: 180px;}
+    #shop #shop_bottom_text #yacht_name h1 {font-size: 2.5rem;}
+    #shop #shop_bottom_text #yacht_name h2 {font-size: 1rem;}
+    #shop #shop_bottom_text #next_product {width: 50px;}
+    #shop #shop_bottom_text #next_product h1 {display: none;}
+    #shop #shop_bottom_text #curved_square {height: 100px;}
+
+    #shop #main_specs #responsive_main_specs_square {
+        transform: translateX(-1.5rem); 
+        width: calc(100% - 70px);
+        height: calc(100% - 40px);
+    } 
+
+    #shop #discover_more {opacity: 0.7;}
+    #shop #discover_more h1 {font-size: 1rem;}
+    #shop #discover_more #long_line {height: 2px; width: 35px; right: -45px; top: 11px;}
+    #shop #discover_more #arrow_line1 {height: 2px; right: -45px; top: 11px;}
+    #shop #discover_more #arrow_line2 {height: 2px; right: -45px; top: 11px;}
+
+    #shop #images_shop #more_specs_btn {
+        padding: .25rem;
+        width: 100px;
+    }
+
+    #shop #images_shop #more_specs_btn h1 {font-size: 1rem;}
+}
+/* ---------------------------------------------------------------- */
+
+
+/* The Product */
+#product_page {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+
+    display: block;
+    visibility: hidden;
+    transform: translateX(-100%);   
+}
+
+#product_page #page_over_background {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    opacity: .5;
+}
+
+#product_page #actual_info_product {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: calc(100% - 2rem);
+    width: calc(100% - 1rem);
+    max-width: 1000px;
+    padding: 2rem;
+    padding-bottom: 0;
+    background-color: #ffffff;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    display: none;
+    animation-name: appear_actual_info_product;
+    animation-duration: .5s;
+}
+@keyframes appear_actual_info_product {
+    from {
+        transform: translate(-50%, -150%);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+#product_page #actual_info_product #product_header_part {
+    position: relative;
+    width: 100%;
+}
+
+#product_page #actual_info_product #product_header_part h1 {
+    display: table;
+
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.4rem;
+    font-weight: bold;
+    border-bottom: 5px solid #df3f5f;
+    border-top: 5px solid #df3f5f;
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    justify-content: center;
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons #contact_us_btn {
+    box-sizing: border-box;
+    width: 140px;
+    height: 40px;
+    border: 2px solid #df3f5f;
+    text-align: center;
+    transition: .5s all;
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons #contact_us_btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 2px #df3f5f;
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons #contact_us_btn h2 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1rem;
+    margin: .5rem auto;
+    text-align: center;
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons #contact_us_btn #phone_number {
+    display: none;
+    transform: translateY(+5px);
+    animation-name: phone_number_appear;
+    animation-duration: .5s;
+}
+@keyframes phone_number_appear {
+    from {
+        visibility: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        visibility: 1;
+        transform: translateY(+5px);
+    }
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons #close_btn {
+    text-align: center;
+    margin-left: 2rem;
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons #close_btn img {
+    height: 25px;
+    width: 25px;
+    margin: auto;
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons #close_btn h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: .75rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: .5s all;
+}
+
+#product_page #actual_info_product #product_header_part #help_buttons #close_btn:hover {cursor: pointer;}
+#product_page #actual_info_product #product_header_part #help_buttons #close_btn:hover h3 {color: #df3f5f;}
+
+#product_page #actual_info_product #image_slideshow {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    position: relative;
+}
+
+#product_page #actual_info_product #image_slideshow #big_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: url('images/yacht1_0.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transition: .4s all;
+}
+
+#product_page #actual_info_product #image_slideshow #big_image_error {position: absolute; visibility: hidden;}
+
+#product_page #actual_info_product #image_slideshow #slideshow_counter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(-90deg) translateX(+2rem);
+    
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.4rem;
+    color: #ffffff;
+    text-shadow: 2px 2px #df3f5f;
+}
+
+#product_page #actual_info_product #image_slideshow #slide_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #df3f5f;
+
+    padding: .5rem 1rem;
+    display: flex;
+    transition: .5s all;
+}
+
+#product_page #actual_info_product #image_slideshow #slide_btn h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin: auto 0;
+    margin-right: .5rem;
+}
+
+#product_page #actual_info_product #image_slideshow #slide_btn img {
+    height: 13px;
+    margin: auto 0;
+}
+
+#product_page #actual_info_product #image_slideshow #slide_btn:hover {
+    cursor: pointer;
+    box-shadow: -2px 2px #ffffff;
+}
+
+#product_page #actual_info_product #text_presenation {margin-top: 2rem;}
+#product_page #actual_info_product #text_presenation h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    padding-bottom: .25rem;
+    border-bottom: 3px solid #df3f5f;
+}
+#product_page #actual_info_product #text_presenation p { 
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+}
+
+#product_page #actual_info_product #divide_footer_line {
+    width: 100%;
+    display: flex;
+    margin: 3rem 0 2rem 0;
+}
+
+#product_page #actual_info_product #divide_footer_line #footer_line {
+    height: 3px; 
+    width: 100%;
+    margin: auto 0;
+    background-color: #df3f5f;
+}
+
+#product_page #actual_info_product #divide_footer_line img {
+    height: 40px;
+    margin: 0 1rem;
+}
+
+#product_page #actual_info_product #footer_btn_box {
+    position: relative;
+    margin: 2rem 0;
+    margin-bottom: 4rem;
+}
+
+#product_page #actual_info_product #footer_btn_box h1 {
+    display: table;
+    margin: 0 auto;
+
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+#product_page #actual_info_product #footer_btn_box p {
+    display: table;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#product_page #actual_info_product #footer_btn_box #footer_btn {
+    display: flex;
+    justify-content: center;
+}
+
+#product_page #actual_info_product #footer_btn_box #footer_btn .footer_actual_btn {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-align: center;
+
+    border: none;
+    margin: auto 2rem;
+
+    width: 120px;
+    padding: .75rem 0rem;
+    background-color: #df3f5f;
+    color: #ffffff;
+
+    transition: .5s all;
+    position: relative;
+}
+
+#product_page #actual_info_product #footer_btn_box #footer_btn .footer_actual_btn:before {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #df3f5f;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+
+    transition: .4s all;
+}
+
+#product_page #actual_info_product #footer_btn_box #footer_btn .footer_actual_btn:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: normal;
+}
+
+#product_page #actual_info_product #footer_btn_box #footer_btn .footer_actual_btn:hover::before {width: 60%;}
+
+@media (max-width: 600px) {
+    #product_page #actual_info_product #product_header_part h1 {margin: 0 auto;}
+    #product_page #actual_info_product {padding-top: 5rem;}
+    #product_page #actual_info_product #product_header_part {padding-top: 2rem;}
+    #product_page #actual_info_product #product_header_part #help_buttons {
+        top: -1rem; 
+        transform: translateY(-100%);
+        width: 100%;
+        display: block;
+    }
+    #product_page #actual_info_product #product_header_part #help_buttons #close_btn {
+        margin: 0;
+        float: right;
+    }
+    #product_page #actual_info_product #product_header_part #help_buttons #contact_us_btn {
+        position: absolute;
+        top: 50%; 
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+}
+
+@media (max-width: 500px) {
+    #product_page #actual_info_product {padding-left: 1rem; padding-right: 1rem;}
+    #product_page #actual_info_product #footer_btn_box #footer_btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #product_page #actual_info_product #footer_btn_box p {margin-bottom: 2rem;}
+    #product_page #actual_info_product #footer_btn_box #footer_btn .footer_actual_btn {margin: 1rem auto;}
+    #product_page #actual_info_product #image_slideshow #slide_btn {padding: .5rem;}
+    #product_page #actual_info_product #image_slideshow #slide_btn h1 {font-size: .9rem;}
+    #product_page #actual_info_product #image_slideshow #slide_btn img {height: 10px;}
+    #product_page #actual_info_product #image_slideshow #slideshow_counter {font-size: 1rem; transform: rotate(-90deg) translateX(+1rem);}
+}
+/* ---------------------------------------------------------------- */
+
+
+/* Sea Transition */ 
+#sea_transition {
+    width: 100%;
+    background: url('images/sea_transition.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    z-index: -2;
+}
+/* ---------------------------------------------------------------- */
+
+
+/* Testimonials */
+#testimonials {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-bottom: 1rem;
+    background-color: #298c81;
+}
+
+#testimonials #tst_header {
+    position: relative;
+    display: table;
+    margin-left: 5rem;
+}
+
+#testimonials #tst_header h1 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 5rem;
+    font-weight: normal;
+    letter-spacing: 20px;
+    color: #ffffff;
+
+    display: table;
+}
+
+#testimonials #tst_header h2 {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Pacifico', cursive;
+    font-size: 6rem;
+    letter-spacing: 10px;
+    font-weight: bold;
+    color: #df3f5f;
+    opacity: .5;
+}
+
+#testimonials #tst_header h3 {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: -20px;
+    transform: translateY(-50%);
+
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #ffffff;
+    opacity: .6;
+}
+
+#testimonials #tst_header #tst_header_line {
+    position: absolute;
+    left: -1rem;
+    top: -20px;
+
+    width: 300px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-right: .5rem;
+    transform: translate(-100%, -50%);
+}
+
+#testimonials #tst_content {
+    position: relative;
+    margin: 0 auto;
+    margin-right: 0;
+    margin-top: 4rem;
+
+    max-width: 1000px;
+    width: calc(100% - 2rem);
+    height: auto;
+    display: flex;
+}
+
+#testimonials #tst_content #person_image {
+    width: 65%;
+    height: auto;
+    max-height: 500px;
+
+    background: url('images/person1.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transition: .5s all;
+}
+
+#testimonials #tst_content #text {
+    width: 35%;
+    text-align: left;
+    padding: 2rem;
+    position: relative;
+    background-color: #ffffff;
+}
+
+#testimonials #tst_content #text #review_text {
+    font-family: 'Average Sans', sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+#testimonials #tst_content #text #info_person {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.2rem;
+    margin: 2rem auto 1rem auto;
+}
+
+#testimonials #tst_content #text #box_counter {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #df3f5f;
+
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    letter-spacing: 3px;
+}
+
+#testimonials #tst_content #text #next_tst {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    display: flex;
+}
+
+#testimonials #tst_content #text #next_tst h1{
+    font-size: .9rem;
+    margin: auto;
+    margin-right: .2rem;
+}
+
+#testimonials #tst_content #text #next_tst img {
+    width: 20px;
+    transition: .2s all;
+}
+#testimonials #tst_content #text #next_tst:hover {cursor: pointer;}
+#testimonials #tst_content #text #next_tst:hover img {transform: rotate(90deg);}
+
+#testimonials #tst_content #qoute_img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    transform: translate(-3rem, -2rem);
+}
+
+#testimonials #tst_content #qoute_img img {
+    width: 100px;
+    opacity: .8;
+}
+
+#testimonials #thank_you {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #df3f5f;
+    padding: 0 1rem;
+}
+
+#testimonials #thank_you h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    line-height: 0.2rem;
+    color: #ffffff;
+}
+#testimonials #thank_you h1 span {
+    font-size: 4rem;
+    color: #000000;
+}
+
+@media (max-width: 1250px) {
+    #testimonials #tst_content #thank_you {display: none;}
+}
+@media (max-width: 900px) {
+    #testimonials #tst_content {
+        display: block;
+        margin: 0 auto;
+        margin-top: 4rem;
+    }
+    #testimonials #tst_content #text {width: 100%;}
+    #testimonials #tst_content #person_image {width: 100%; height: 400px;}
+}
+
+@media (max-width: 750px) {
+    #testimonials #tst_header {margin: 0 auto;}
+    #testimonials #tst_header h2 {font-size: 5rem;}
+}
+
+@media (max-width: 650px) { 
+    #testimonials #tst_header {
+        display: table;
+        max-width: calc(100% - 2rem);   
+        margin-left: 2rem;
+    }
+    #testimonials #tst_header #tst_header_line {left: -.5rem;}
+    #testimonials #tst_header h1 {
+        display: block;
+        width: inherit;
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+        word-wrap: break-word;
+    }
+    #testimonials #tst_header h2 {font-size: 2.5rem;}
+}
+/* ---------------------------------------------------------------- */
+
+
+/* Partners */
+#partners {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #298c81;
+    padding-bottom: 2rem;
+    padding-top: 7rem;
+}
+
+#partners #fill_blank {
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 0;
+
+    transform: translateY(-100%);
+    width: 100%;
+    background-color: #298c81;
+}
+
+#partners #partners_header {
+    position: relative;
+    display: table;
+    margin-left: 5rem;
+}
+
+#partners #partners_header h1 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 5rem;
+    font-weight: normal;
+    letter-spacing: 20px;
+    color: #ffffff;
+
+    display: table;
+}
+
+#partners #partners_header h2 {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Pacifico', cursive;
+    font-size: 6rem;
+    letter-spacing: 10px;
+    font-weight: bold;
+    color: #df3f5f;
+    opacity: .5;
+}
+
+#partners #partners_header h3 {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: -20px;
+    transform: translateY(-50%);
+
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #ffffff;
+    opacity: .6;
+}
+
+#partners #partners_header #partners_header_line {
+    position: absolute;
+    left: -1rem;
+    top: -20px;
+
+    width: 300px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-right: .5rem;
+    transform: translate(-100%, -50%);
+}
+
+#partners #partners_logos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 100%; 
+}
+
+#partners #partners_logos #partners_images {
+    display: flex;
+    overflow-x: hidden;
+    padding-bottom: 4px;    
+}
+
+#partners #partners_logos #partners_images .partners_img_box {
+    position: relative;
+    min-width: 250px;
+    margin: 0 2.5rem;
+    padding: 1.5rem 0;  
+    padding-bottom: .5rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: .5s all;
+}
+
+#partners #partners_logos #partners_images .partners_img_box:hover {
+    cursor: pointer;
+    box-shadow: 6px 4px #df3f5f;
+}
+
+#partners #partners_logos #partners_images .partners_img_box img {
+    display: table;
+    height: 70px;
+    margin: 0 auto;
+}
+
+#partners #partners_logos #partners_images .partners_img_box h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 2.5rem 0 .5rem 2rem;
+}
+
+#partners #partners_logos #partners_images .partners_img_box h2 {
+    font-size: .8rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#partners #partners_logos #partners_images .partners_img_box p {
+    font-size: .9rem;
+    padding: 0 2rem;
+    text-align: left;
+}
+
+#partners #partners_logos #ant_next_btn {margin: auto 1rem; height: 29px;}
+#partners #partners_logos #ant_next_btn #ant_next_btn_1 {
+    opacity: 0; 
+    transform: rotate(-180deg);
+    transition: .4s all;
+}
+#partners #partners_logos #ant_next_btn #ant_next_btn_1:hover {cursor: pointer;}
+#partners #partners_logos #ant_next_btn #ant_next_btn_2 {transition: .4s all;}
+#partners #partners_logos #ant_next_btn #ant_next_btn_2:hover {cursor: pointer;}
+#partners #partners_logos #ant_next_btn img {width: 18px; height: 29px;}
+
+#partners #social_media_box {
+    width: calc(100% - 2rem);
+    max-width: 600px;
+    margin: 4rem auto 0 auto;
+}
+
+#partners #social_media_box h1 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+}
+
+#partners #social_media_box #social_media_images {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#partners #social_media_box #social_media_images img {
+    width: 30px;
+    margin: 0 1rem;
+    border-radius: 50%;
+    transition: .3s all;
+}
+
+#partners #social_media_box #social_media_images img:hover {
+    cursor: pointer;
+    background-color: #206E64;
+}
+
+@media (max-width: 750px) {
+    #partners #partners_header {margin: 0 auto;}
+    #partners #partners_header h2 {font-size: 5rem;}
+}
+
+@media (max-width: 650px) { 
+    #partners #partners_header {
+        display: table;
+        max-width: calc(100% - 2rem);   
+        margin-left: 2rem;
+    }
+    #partners #partners_header #partners_header_line {left: -.5rem;}
+    #partners #partners_header h1 {
+        display: block;
+        width: inherit;
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+        word-wrap: break-word;
+    }
+    #partners #partners_header h2 {font-size: 2rem;}
+}
+
+@media (max-width: 493px) {
+    #partners #partners_logos {width: 100%;}
+    #partners #partners_logos #partners_images .partners_img_box {margin: 0 10px;}
+    #partners #partners_logos #ant_next_btn {margin: auto .5rem;}
+}
+/* ---------------------------------------------------------------- */
+
+
+/* The subscribe to newsletter */
+#newsletter {
+    background-color: #298c81;
+    width: 100%;
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+#newsletter #subscribe_line {
+    height: 200px;
+    width: 4px;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+#newsletter #newsletter_box {
+    width: calc(100% - 2rem);
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 3rem;
+    padding-bottom: 2rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+
+    text-align: center;
+    border: 2px solid #df3f5f;
+    box-shadow: 4px 4px #df3f5f;
+
+    position: relative;
+    z-index: 1;
+}
+
+#newsletter #newsletter_box h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#newsletter #newsletter_box p {
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#newsletter #newsletter_box .form_input {
+    position: relative;
+    width: 100%;
+    margin: 1rem auto;
+    border-bottom: 2px solid #df3f5f;
+}
+
+#newsletter #newsletter_box .form_input input {
+    width: 100%;
+    padding: .5rem;
+    padding-right: 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
+
+#newsletter #newsletter_box .form_input label {
+    position: absolute;
+    top: 0;
+    right: .5rem;
+
+    font-size: .8rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: .5s all; 
+}
+
+#newsletter #newsletter_box .form_input input:valid + label {
+   position: absolute;
+   top: 50%;
+   right: .5rem;
+   transform: translateY(-50%);
+   opacity: 1;
+}
+
+#newsletter #newsletter_box #subscribe_btn {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 2px solid #df3f5f;
+    background-color: transparent;
+    padding: .5rem;
+    margin: 2rem auto 0 auto;
+    width: 125px;
+
+    outline: none;
+    transition: .5s all;
+}
+
+#newsletter #newsletter_box #subscribe_btn:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px #df3f5f;
+}
+
+@media (max-width: 400px) {
+    #newsletter #newsletter_box {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+/* ---------------------------------------------------------------- */
+
+
+/* CONTACT */
+#contact {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: #0F0F0F;
+    opacity: .9;
+
+    padding: 4rem;
+    padding-bottom: 6rem;
+}
+
+#contact #only_info {
+    width: 50%;
+    display: flex;
+}
+
+#contact #business_presentation {
+    padding: .75rem;
+    text-align: center;
+    max-width: 400px;
+}
+
+#contact #business_presentation #business_header {
+    display: flex;
+    border-bottom: 4px #df3f5f solid;
+    padding-bottom: .75rem;
+}
+
+#contact #business_presentation #business_header img {
+    height: 50px;
+    display: block;
+    margin: auto 0;
+}
+
+#contact #business_presentation #business_header h1 {
+    margin: auto 0;
+    margin-left: .5rem;
+    margin-bottom: -10px;
+    text-align: center;
+
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 7px;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+#contact #business_presentation p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-top: .5rem;
+    text-align: left;
+}
+
+#contact #contact_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 52px 2rem auto 5rem;
+} 
+
+#contact #contact_info #contact_data {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#contact #contact_info #contact_data h1 {
+    display: table;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    text-align: left;
+    letter-spacing: 2px;
+    color: #ffffff;
+
+    border-bottom: 4px solid #df3f5f;
+}
+
+#contact #contact_info #contact_data h2 {
+    color: #ffffff;
+    font-weight: normal;
+    text-align: left;
+    font-size: 1rem;
+    margin: .5rem 0;
+
+    border-left: 1.5px solid #ffffff;
+    padding-left: .5rem;
+}
+
+#contact #contact_info #external_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#contact #contact_info #external_links h1 {
+    display: table;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    text-align: left;
+    letter-spacing: 2px;
+    color: #ffffff;
+
+    border-bottom: 4px solid #df3f5f;
+}
+
+#contact #contact_info #external_links a {
+    font-family: 'Average Sans', sans-serif;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: left;
+    font-size: 1rem;
+    text-decoration: none;
+    margin: .5rem 0;
+
+    border-left: 1.5px solid #ffffff;
+    padding-left: .5rem;
+}
+
+#contact #contact_info #external_links a:after {
+    content: '';
+    height: 1px;
+    background: #0F0F0F; 
+    display: block;
+    margin-top: 2px;
+    width: 0;
+    transition: .4s width;
+}
+#contact #contact_info #external_links a:hover:after {background:#ffffff; width: 60px;}
+
+#contact #connect_line {
+    margin: auto 0;
+    margin-right: 0;
+    transform: translateX(+40%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#contact #connect_line img {height: 15px;}
+
+#contact #map_position {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contact #map_position iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border: 2px solid #df3f5f;
+}
+
+#contact #footer_decoration {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+
+    padding-bottom: 2rem;
+    display: flex;
+    vertical-align: bottom;
+}
+
+#contact #footer_decoration img {
+    height: 170px;
+    transform: translate(-50%, 2rem);
+}
+
+#contact #footer_decoration #footer_line {
+    width: 50%;
+    height: 3px;
+    background-color: #df3f5f;
+    margin: auto 0;
+    margin-bottom: 0;
+    transform: translateX(-1.25rem);
+}
+
+#contact #footer_decoration h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #df3f5f;
+
+    width: 300px;
+    height: 50px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: auto;
+    margin-bottom: 0;
+    margin-left: 0;
+    transform: translateY(+50%);
+}
+
+@media (max-width: 1300px) {
+    #contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact #only_info {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #contact #connect_line {
+        width: 100%;
+        margin: 3rem auto;
+        transform: translateX(0);
+        text-align: center;
+
+        flex-direction: row;
+    }
+    #contact #connect_line img {
+        display: table;
+        width: 110px;
+        height: auto;
+        transform: rotate(90deg) translateX(40%);
+        margin: auto 0;
+        z-index: 2;
+    }
+
+    #contact #map_position {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 800px) {
+    #contact #footer_decoration h1 {font-size: 1.2rem;}
+
+    #contact #only_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact #business_presentation {padding: 0;}
+
+    #contact #contact_info { 
+        display: flex;
+        flex-direction: row;
+        margin-left: 0;
+        width: 100%;
+    }
+   
+    #contact #contact_info {margin-right: 0;}
+    #contact #contact_info #contact_data {width: 50%; max-width: 200px;}
+    #contact #contact_info #contact_data h1 {width: 110px;}
+    #contact #contact_info #external_links {
+        margin-top: 0;
+        margin-left: 5rem;
+        width: 50%; max-width: 200px;
+    }
+    #contact #contact_info #external_links {width: 110px;}
+}
+
+@media (max-width: 500px) {
+    #contact {padding-left: 2rem; padding-right: 2rem;}
+    #contact #contact_info { 
+        flex-direction: column;
+        align-items: left;
+    }
+    #contact #contact_info #external_links {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+    #contact #footer_decoration h1 {font-size: .9rem;}
+}
+
+/* ---------------------------------------------------------------- */

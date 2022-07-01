@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Sintony&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link rel="shortcut icon" href="images/mainColor_logo.png"/> 
+    <link rel="stylesheet" href="index.css">
+
+    <title>A-Yacht</title>
+</head>
+<body>
+
+    <!-- Here is the loading animation before the page loads completly -->
+    <div id="loader">
+        <div class="loader" id="loader1"></div>
+        <div class="loader" id="loader2"></div>
+        <div class="loader" id="loader3"></div>
+        <div class="loader" id="loader4"></div>
+    </div>
+
+    <main>
+        <!-- Landing Page -->
+        <section id="landing_page">
+
+            <div class="landing_image" id="landing_image1"></div>
+            <div class="landing_image" id="landing_image2"></div>
+            <div class="landing_image" id="landing_image3"></div>      
+            
+            <div id="text_box">
+                <h1>
+                    Enjoy your holiday.
+                    <div id="underline"></div>
+                </h1>
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolors emque dolores numquam deserunt iure ipsa exercitationem. Velit corporis itaque, rem illum obcaecati, et vitae temporibus quos alias nulla fugit at quod.</h2>
+            
+                <div id="explore_more_btn">
+                    <a href="#about_us">EXPLORE</a>
+                    <div id="inside_btn"> 
+                        <div id="line1"></div>
+                        <div id="line2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="landing_counter">
+                <h1 id="first_counter">01.</h1>
+                <div id="square1"></div>
+                <div id="square2"></div>
+                <div id="square3"></div>
+            </div>
+
+            <div id="random_text_background_l1"></div>
+            <div id="random_text_background_l2"></div>
+            <div id="random_text_background"></div>
+            <div id="random_text">
+                <div class="random_text_inside" id="random_text_inside1">COMFORT</div>
+                <div class="random_text_inside" id="random_text_inside2">LUXURY</div>
+                <div class="random_text_inside" id="random_text_inside3">DELIGTH</div>
+                <span id="sp1">+</span>
+                <span id="sp2">+</span>
+                <span id="sp3">--</span>
+            </div>
+
+            <div id="social_media">
+                <div id="line_social_media"></div>
+                <div id="text_social_media">Keep in touch with us!</div>
+                <img src="images/facebook.png" alt="">
+                <img src="images/instagram.png" alt="">
+                <img src="images/twitter.png" alt="">
+            </div>
+        </section>
+
+        <!-- Navbar -->
+        <div id="navbar_large">
+            <div id="image_logo">
+                <img id="navbar_image" src="images/white_logo.png" alt="">   
+                <h1>-YACHT</h1>
+            </div>
+        
+            <div id="links">
+                <a href="#landing_page">HOME</a>
+                <a href="#about_us">ABOUT</a>
+                <a href="#shop">MODELS</a>
+                <a href="#testimonials">CUSTOMERS</a>
+                <a href="#contact">CONTACT</a>
+                <a id="no_hover" href=""><img src="images/search.png" alt=""></a>
+            </div>
+
+            <div onclick="openNav()" id="open_nav_btn">
+                <span id="open_nav_line2"></span>
+                <span id="open_nav_line1"></span>
+                <span id="open_nav_line2"></span>
+            </div>
+        </div>
+        
+        <div id="navbar_responsive">
+            <div id="links">
+                <a href="">HOME</a>
+                <a onclick="closeNav()" href="#about_us">ABOUT</a>
+                <a onclick="closeNav()" href="#shop">MODELS</a>
+                <a onclick="closeNav()" href="#testimonials">CUSTOMERS</a>
+                <a onclick="closeNav()" href="#contact">CONTACT</a>
+            </div>
+
+            <div id="logo_behind">
+                <img src="images/logo_navbar_responsive.png" alt="">
+            </div>
+
+            <div id="social_media_navbar">
+                <div id="navbar_line"></div>
+                <img src="images/facebook.png" alt="">
+                <img src="images/instagram.png" alt="">
+                <img src="images/twitter.png" alt="">
+                <div id="navbar_line"></div>
+            </div>
+
+            <div onclick="closeNav()" id="close_navbar">
+                <img src="images/close_btn_white.png" alt="">
+            </div>
+        </div>
+
+        <!-- Go up button -->
+        <div id="go_up">
+            <a href="#landing_page">
+                <img src="images/next_white.png" alt="">
+                TOP
+            </a>
+        </div>
+
+        <!-- ABOUT US -->
+        <section id="about_us">
+            <div id="image_about_us">
+                <div id="image_overlay"></div>
+                <div id="text_overlay">
+                    <img src="images/mainColor_logo.png" alt="">
+                    <h1>A-Yacht</h1>
+                </div>
+            </div>
+
+            <div id="text_about_us">
+                <div id="header_about_us">ABOUT <br> US<span>.</span></div>
+                <div id="line_between"></div>
+                <div id="content_about_us">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta ea obcaecati, iure, earum doloremque a illo quidem, quibusdam commodi sequi quasi? Necessitatibus ad nostrum et ducimus distinctio, blanditiis officia non odio inventore corporis, ipsam impedit, excepturi natus! Magni voluptatibus vel odio. Perspiciatis, eveniet. Illo eum sequi fugiat laudantium accusantium temporibus quidem nostrum, quisquam ipsa repudiandae illum perspiciatis ratione consequatur veniam. Aperiam, recusandae! Iusto voluptatibus amet quae consectetur necessitatibus accusamus, soluta placeat, unde, maiores obcaecati fugit!</div>
+            </div>
+            
+            <div id="y_letter"><img src="images/y_letter.png" alt=""></div>
+        </section>
+
+        <!-- THE SHOP -->
+        <section id="shop">
+            <div id="dividing_line"></div>
+            <div id="main_specs_left_line"></div>
+            
+            <div id="discover_more">
+                <h1>Discover More</h1>
+                <span id="long_line"></span>
+                <span id="arrow_line1"></span>
+                <span id="arrow_line2"></span>
+            </div>
+
+            <div id="images_shop">
+                <img id="shop_img1" src="images/brush_yacht1.png" alt="">
+                <img id="shop_img2" src="images/brush_yacht2.png" alt="">
+                <img id="shop_img3" src="images/brush_yacht3.png" alt="">
+                <img id="shop_img4" src="images/brush_yacht4.png" alt="">
+                <img id="over_image_background" src="images/over_image_background.png" alt="">
+                <div onclick="openDetails()" id="more_specs_btn">
+                    <h1>DETAILS</h1>
+                </div>
+            </div>
+
+            <div id="main_specs">
+                <div id="main_specs_decoration_text">LUXURY. EXCELLENCE. COMFORT.</div>
+
+                <div id="spec1" class="spec">
+                    <h2>avg. speed</h2>
+                    <h1><span id="spec1_span">30</span>Km/h</h1>
+                    <div id="divide_spec_line"></div>
+                </div>
+
+                <div id="spec2" class="spec">
+                    <h2>measure</h2>
+                    <h1><span id="spec2_span">60</span>Meters</h1>
+                    <div id="divide_spec_line"></div>
+                </div>
+
+                <div id="spec3" class="spec">
+                    <h2>capacity</h2>
+                    <h1><span id="spec3_span">5</span>in <span id="spec4_span">3</span> cabins</h1>
+                </div>
+                
+                <div id="responsive_main_specs_img">
+                    <div onclick="activate_spec(1)" class="responsive_main_specs_img_container" id="responsive_main_specs_img_container1">
+                        <img id="responsive_main_specs_img1" src="images/speed.png" alt="">
+                        <div id="divide_spec_line"></div>
+                    </div>
+                    <div onclick="activate_spec(2)" class="responsive_main_specs_img_container" id="responsive_main_specs_img_container2">
+                        <img id="responsive_main_specs_img2" src="images/length.png" alt="">
+                        <div id="divide_spec_line"></div>
+                    </div>
+                    <div onclick="activate_spec(3)" class="responsive_main_specs_img_container" id="responsive_main_specs_img_container3">
+                        <img id="responsive_main_specs_img3" src="images/capacity.png" alt="">
+                        <div id="divide_spec_line"></div>
+                    </div>
+                </div>
+
+                <div id="responsive_main_specs_square"></div>
+            </div>
+
+            <div id="under_image_title">
+                <h1 id="under_image_title_header">BUMBL$EBEE</h1>
+            </div>
+            
+            <div id="shop_bottom_text">
+                <div id="curved_suqare_line_up"></div>
+                <div id="curved_square"></div>
+
+                <div class="shop_bottom_text_line"></div>
+                
+                <div id="yacht_name">
+                    <h1 id="yacht_name_h1">Bumblebee</h1>
+                    <h2 id="yacht_name_h2">- Fast, but Graceful -</h2>
+        
+                    <div id="color_under_yacht_name"></div>
+                </div>
+                
+                <div class="shop_bottom_text_line"></div>
+                <div class="responsive_shop_bottom_text_line"></div>
+
+                <div onclick="nextProduct()" id="next_product">
+                    <img src="images/more_black.png">
+                    <h1>View More</h1>
+                </div>
+            </div>
+
+            <div id="background_test"></div>
+        </section>
+
+        <!-- PRODUCT_PAGE -->
+        <section id="product_page">
+            <div id="page_over_background"></div>
+            <div id="actual_info_product">
+                <div id="product_header_part">
+                    <h1 id="product_name">BumbleBee</h1>
+                    <div id="help_buttons">
+                        <div onclick="showPhone()" id="contact_us_btn">
+                            <h2 id="contact_us">Contact Us</h2>
+                            <h2 id="phone_number">+1 202 555 0169</h2>
+                        </div>
+                        <div id="close_btn">
+                            <img id="close_btn_img" src="images/close_btn.png" alt="">
+                            <h3 id="close_btn_header">CLOSE</h3>
+                        </div>
+                    </div>
+                </div>      
+                <div id="image_slideshow">
+                    <img id="big_image_error" src="images/close_btn.png" alt="" onerror="putBasicImg()"> 
+                    <div id="big_image"></div>
+                    <div onclick="next_slideshow_image()" id="slide_btn">
+                        <h1>next</h1>
+                        <img src="images/more.png" alt="">
+                    </div>
+                    <div id="slideshow_counter">01/06</div>
+                </div>
+                <div id="text_presenation">
+                    <h1>About the product!</h1>
+                    <p id="text_presenation_para1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, veniam quibusdam beatae eveniet earum vel in molestias quia cum unde ratione velit, perspiciatis, odit numquam. Sint ipsam quibusdam animi reprehenderit voluptatibus! Ad quisquam odio voluptate, aspernatur eaque consequuntur tempore obcaecati ex quod? Velit blanditiis quidem tenetur? Laudantium nihil fugit dolore corrupti magnam molestiae perferendis adipisci iste minima numquam! Eius non harum id natus odio. Sapiente molestiae atque velit praesentium doloremque debitis error architecto voluptatem ratione iste laborum reprehenderit magnam nisi vitae, perspiciatis minima voluptas odit saepe obcaecati nobis deserunt in aliquam? Ullam incidunt quia at accusamus a id tempora excepturi deserunt enim! Maiores totam iste modi repellat. Accusantium sit fugit veniam voluptatum esse possimus laborum fuga, ab molestiae est qui facilis aspernatur eveniet nam natus nostrum quam omnis laudantium voluptates voluptate. Porro accusamus minus adipisci quos doloribus nam! Voluptatem aspernatur quibusdam consectetur velit accusantium blanditiis veniam illum corporis consequuntur totam!</p>
+                    <p id="text_presenation_para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium adipisci autem voluptatem corrupti. Incidunt, aperiam ex similique fugit facilis animi quod dolore dolor voluptates magnam impedit delectus quae corrupti ratione atque reiciendis hic, at, exercitationem qui autem aliquid omnis rerum ipsa. Veritatis laudantium nam at error earum sed qui facilis non nisi vel! Vel ab quaerat obcaecati ullam porro aspernatur architecto nesciunt autem? Dolorum consectetur libero deserunt error earum quas voluptatum accusantium animi cum? Saepe, quidem laudantium id reiciendis ex vel quisquam corrupti possimus, laboriosam vero ipsum. Mollitia dolor accusamus tempore nemo at. Consequatur vel tempora qui, natus eligendi tempore.</p>
+                </div>  
+                <div id="divide_footer_line">
+                    <div id="footer_line"></div>
+                    <img src="images/mainColor_logo.png"> 
+                    <div id="footer_line"></div>
+                </div>
+
+                <div id="footer_btn_box">
+                    <h1>We value our clients!</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime tempora assumenda dolores dignissimos, temporibus voluptate soluta nisi, ratione sed omnis voluptatem laborum quos voluptatum unde.</p>
+                    <div id="footer_btn">
+                        <div class="footer_actual_btn" id="call_us">contact us</div>
+                        <div class="footer_actual_btn" id="reserve_yacht">reserve now</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- The Sea Transition -->
+        <div id="sea_transition"></div>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials">
+            <div id="tst_header">
+                <h1 id="tst_header_h1">MEET OUR <br> CUSTOMERS!</h1>
+                <h2 id="tst_header_h2">Testimonials</h2>
+                <h3>Opinion Matters</h3>
+                <div id="tst_header_line"></div>
+            </div>
+
+            <div id="tst_content">
+                <div id="text">
+                    <div id="review_text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam excepturi sapiente blanditiis quam ducimus aliquam similique, odit ullam unde in iste accusamus eum. In eveniet tempore et fuga. Facilis cupiditate delectus, incidunt magnam nemo ex, unde id porro, nostrum veniam vel. Corporis repellat iste doloribus deserunt illum, doloremque dolorum vel.</div>
+                    <div id="info_person">Zavier Howells, Australia</div>
+                    <div id="box_counter">01/03</div>
+                    <div id="next_tst" onclick="nextCustomer()">
+                        <h1>next</h1>
+                        <img src="images/next.png" alt="">
+                    </div>
+                </div>
+                <div id="person_image"></div>
+                <div id="qoute_img">
+                    <img src="images/testimonials_illustration.png" alt="">
+                </div>
+                <div id="thank_you">
+                    <h1>Thank You<span>.</span></h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTNERS -->
+        <section id="partners">
+            <div id="partners_header">
+                <h1 id="partners_header_h1">OUR <br> PARTNERS!</h1>
+                <h2 id="partners_header_h2">cooperatively</h2>
+                <h3>Together With</h3>
+                <div id="partners_header_line"></div>
+            </div>
+
+            <div id="partners_logos">
+                <div id="ant_next_btn" onclick="scroll_logos(+1)">
+                    <img id="ant_next_btn_1" src="images/next_partners.png" alt="">
+                </div>
+
+                <div id="partners_images">
+                    <div class="partners_img_box">
+                        <img src="images/partner1.png" alt="">  
+                        <div id="partners_divide_line"></div>
+                        <h1>GreenBean</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam asperiores voluptas sit facilis, iure, labore excepturi accusantium in, accusamus dolore mollitia adipisci quas! Molestiae sit facere doloribus amet explicabo est.</p>
+                        <h2>www.graphicmama.com</h2>
+                    </div>
+
+                    <div class="partners_img_box">
+                        <img src="images/partner2.png" alt="">  
+                        <div id="partners_divide_line"></div>
+                        <h1>BeeNinja</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam asperiores voluptas sit facilis, iure, labore excepturi accusantium in, accusamus dolore mollitia adipisci quas! Molestiae sit facere doloribus amet explicabo est.</p>
+                        <h2>www.graphicmama.com</h2>
+                    </div>
+
+                    <div class="partners_img_box">
+                        <img src="images/partner3.png" alt="">  
+                        <div id="partners_divide_line"></div>
+                        <h1>Logotype</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam asperiores voluptas sit facilis, iure, labore excepturi accusantium in, accusamus dolore mollitia adipisci quas! Molestiae sit facere doloribus amet explicabo est.</p>
+                        <h2>www.graphicmama.com</h2>
+                    </div>
+
+                    <div class="partners_img_box">
+                        <img src="images/partner4.png" alt="">  
+                        <div id="partners_divide_line"></div>
+                        <h1>RocketFish</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam asperiores voluptas sit facilis, iure, labore excepturi accusantium in, accusamus dolore mollitia adipisci quas! Molestiae sit facere doloribus amet explicabo est.</p>
+                        <h2>www.graphicmama.com</h2>
+                    </div>
+
+                    <div class="partners_img_box">
+                        <img src="images/partner5.png" alt="">  
+                        <div id="partners_divide_line"></div>
+                        <h1>ArtShot</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam asperiores voluptas sit facilis, iure, labore excepturi accusantium in, accusamus dolore mollitia adipisci quas! Molestiae sit facere doloribus amet explicabo est.</p>
+                        <h2>www.graphicmama.com</h2>
+                    </div>
+
+                    <div class="partners_img_box">
+                        <img src="images/partner6.png" alt="">  
+                        <div id="partners_divide_line"></div>
+                        <h1>Pandy</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam asperiores voluptas sit facilis, iure, labore excepturi accusantium in, accusamus dolore mollitia adipisci quas! Molestiae sit facere doloribus amet explicabo est.</p>
+                        <h2>www.graphicmama.com</h2>
+                    </div>
+
+                    <div class="partners_img_box">
+                        <img src="images/partner7.png" alt="">  
+                        <div id="partners_divide_line"></div>
+                        <h1>LinkTech</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam asperiores voluptas sit facilis, iure, labore excepturi accusantium in, accusamus dolore mollitia adipisci quas! Molestiae sit facere doloribus amet explicabo est.</p>
+                        <h2>www.graphicmama.com</h2>
+                    </div>
+                </div>  
+
+                <div id="ant_next_btn" onclick="scroll_logos(-1)">
+                    <img id="ant_next_btn_2" src="images/next_partners.png" alt="">
+                </div>
+            </div>
+
+            <div id="social_media_box">
+                <h1>Do you want to get in touch with us and learn more about yachts, our partners and our services? Then call us or contact us via social media! We are always keen on new messages!</h1>
+                <div id="social_media_images">
+                    <img src="images/facebook.png" alt="">
+                    <img src="images/instagram.png" alt="">
+                    <img src="images/twitter.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section id="newsletter">
+            <div id="subscribe_line"></div>
+            <div id="newsletter_box">
+                <h1>Subscribe to our Newsletter!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, suscipit. Minima, sed accusantium! Tempora beatae, ipsas.</p>
+                <form id="newsletter_form" action="">
+                    <div class="form_input">
+                        <input id="form_input1" type="text" required placeholder="Name ...">
+                        <label for="form_input1">Name</label>
+                    </div>
+                    <div class="form_input">
+                        <input id="form_input2" type="text" required placeholder="E-mail ...">
+                        <label for="form_input2">E-mail</label>
+                    </div>
+                </form>
+                <button id="subscribe_btn">Subscribe!</button>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div id="only_info">
+                <div id="business_presentation">
+                    <div id="business_header">
+                        <img src="images/white_logo.png" alt="">
+                        <h1>-YACHT</h1>
+                    </div>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate sapiente enim esse doloremque aut ratione?</p>
+                </div>
+                <div id="contact_info">
+                    <div id="contact_data">
+                        <h1>contact us</h1>
+                        <h2>+1 202 555 0169</h2>
+                        <h2>some_eamil3@gmail.com</h2>
+                        <h2>another_mail@gmail.com</h2>
+                    </div>
+                    <div id="external_links">
+                        <h1>learn more</h1>
+                        <a href="">Terms of Use</a>
+                        <a href="">Privacy Policy</a>
+                        <a href="">Legal Notice</a>
+                    </div>
+                </div>    
+            </div>
+    
+            <div id="connect_line">
+                <img src="images/zig_zag_line.png" alt="">
+            </div>
+            <div id="map_position">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d529.3622948104012!2d-2.2273189927051553!3d51.75011787735737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871093f561456bd%3A0xec174126c70f19df!2sStratford%20Park%20Car%20Park!5e0!3m2!1sen!2sro!4v1591648312104!5m2!1sen!2sro"></iframe>
+            </div>
+
+            <div id="footer_decoration">
+                <img src="images/mainColor_logo.png" alt="">
+                <div id="footer_line"></div>
+                <h1>Enjoy Your Holiday!</h1>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script src="index.js"></script>
+
+</html>
